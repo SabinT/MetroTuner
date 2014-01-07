@@ -1,3 +1,3 @@
-Note: Please build/run with JDK/KRE 1.6
+Please use JDK/JRE version 6+
 
-To run the built jar, it has to be alongside the "images" directory
+The prebuilt jar file can be found in the "binaries" directory
