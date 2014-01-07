@@ -7,8 +7,10 @@ package sabint.metrotuner;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
  *
@@ -23,7 +25,11 @@ public class ImagePanel extends JPanel {
     }
     
     public ImagePanel(String str) {
-        this.img = new ImageIcon(str).getImage();
+        //URL imageUrl = getClass().getResource(str);
+        URL imageUrl = ClassLoader.getSystemResource(str);
+        
+        this.img = new ImageIcon(imageUrl).getImage();
+        //this.img = new ImageIcon(str).getImage();
         
         Dimension size = new Dimension(img.getWidth(null),
                 img.getHeight(null));

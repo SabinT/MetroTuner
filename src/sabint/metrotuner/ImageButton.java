@@ -32,15 +32,18 @@ public class ImageButton extends JButton {
     }
     
     private void loadIcons () {
-        URL normalURL = getClass().getClassLoader().getResource ("images/normal/" + name + ".gif");
-        //ImageIcon normalIcon = new ImageIcon(normalURL);
-        ImageIcon normalIcon = new ImageIcon("images/normal/" + name + ".gif");
-        URL pressedURL = getClass().getClassLoader().getResource ("images/down/" + name + ".gif");
-        //ImageIcon pressedIcon = new ImageIcon(pressedURL);
-        ImageIcon pressedIcon = new ImageIcon("images/down/" + name + ".gif");
-        URL overURL = getClass().getClassLoader().getResource ("images/over/" + name + ".gif");
-        //ImageIcon overIcon = new ImageIcon(overURL);
-        ImageIcon overIcon = new ImageIcon("images/over/" + name + ".gif");
+      
+        URL normalURL =  ClassLoader.getSystemResource("images/normal/" + name + ".gif");
+        ImageIcon normalIcon = new ImageIcon(normalURL);
+        //ImageIcon normalIcon = new ImageIcon("images/normal/" + name + ".gif");
+        
+        URL pressedURL =  ClassLoader.getSystemResource ("images/down/" + name + ".gif");
+        ImageIcon pressedIcon = new ImageIcon(pressedURL);
+        //ImageIcon pressedIcon = new ImageIcon("images/down/" + name + ".gif");
+        
+        URL overURL =  ClassLoader.getSystemResource("images/over/" + name + ".gif");
+        ImageIcon overIcon = new ImageIcon(overURL);
+        //ImageIcon overIcon = new ImageIcon("images/over/" + name + ".gif");
         
         setIcon(normalIcon);
         setRolloverIcon(overIcon);
